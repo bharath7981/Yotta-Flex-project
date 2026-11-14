@@ -1,0 +1,13 @@
+carrier_id,carrier_name,primary_mode,on_time_rate,avg_delay_hours,reliability_score,transit_variability_hours,is_active
+CAR-2026-000001,FastFreight Express,TRUCK,0.7342,2.03,0.7627,2.82,True
+CAR-2026-000002,GlobalAir Cargo,AIR,0.7342,6.42,0.9139,4.21,True
+CAR-2026-000003,SteadyHaul Logistics,TRUCK,0.7376,7.6,0.9237,1.46,True
+CAR-2026-000004,SwiftFleet Transport,TRUCK,0.7658,13.87,0.9775,5.39,True
+CAR-2026-000005,ReliableCarriers National,RAIL,0.7937,16.87,0.7435,1.95,True
+CAR-2026-000006,OceanBridge Intermodal,OCEAN,0.7023,15.88,0.9202,5.21,True
+CAR-2026-000007,AirPrime Direct,AIR,0.774,12.89,0.7723,4.09,True
+CAR-2026-000008,RailConnect Freight,RAIL,0.8699,12.74,0.7266,1.59,True
+CAR-2026-000009,ApexTrans Continental,TRUCK,0.7878,3.13,0.9111,3.71,True
+CAR-2026-000010,MetroHaul Urban,TRUCK,0.7057,2.93,0.7759,5.51,True
+CAR-2026-000011,NordicRoute Freight,TRUCK,0.8154,16.91,0.7536,7.06,True
+CAR-2026-000012,PinnacleLogistics,AIR,0.8334,9.93,0.7301,1.71,True

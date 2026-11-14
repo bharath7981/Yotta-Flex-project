@@ -1,0 +1,54 @@
+{
+  "overall": {
+    "ground_truth_total": 60,
+    "detected_total": 60,
+    "true_positives": 60,
+    "false_positives": 0,
+    "false_negatives": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0
+  },
+  "by_category": {
+    "EVENT_INGESTION_CONFUSION": {
+      "ground_truth_count": 20,
+      "detected_count": 20,
+      "true_positives": 20,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "IMPOSSIBLE_ROUTE_ORDER": {
+      "ground_truth_count": 15,
+      "detected_count": 15,
+      "true_positives": 15,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "FUTURE_DATA_LEAKAGE": {
+      "ground_truth_count": 15,
+      "detected_count": 15,
+      "true_positives": 15,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "DELIVERED_BUT_IN_TRANSIT": {
+      "ground_truth_count": 10,
+      "detected_count": 10,
+      "true_positives": 10,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    }
+  }
+}

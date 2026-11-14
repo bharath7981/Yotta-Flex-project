@@ -1,0 +1,34 @@
+{
+  "Planned_Baseline": {
+    "MAE": 3.4572,
+    "RMSE": 5.1419,
+    "R2": 0.9376,
+    "MedianAE": 2.4908,
+    "P90_Error": 7.0579,
+    "SampleCount": 10970
+  },
+  "Rule_Based": {
+    "MAE": 5.8255,
+    "RMSE": 6.7475,
+    "R2": 0.8925,
+    "MedianAE": 5.4458,
+    "P90_Error": 10.3415,
+    "SampleCount": 10970
+  },
+  "ML_HistGBT_Base": {
+    "MAE": 0.4725,
+    "RMSE": 1.5457,
+    "R2": 0.9944,
+    "MedianAE": 0.1497,
+    "P90_Error": 0.8889,
+    "SampleCount": 10970
+  },
+  "ML_HistGBT_Engineered": {
+    "MAE": 0.4725,
+    "RMSE": 1.5457,
+    "R2": 0.9944,
+    "MedianAE": 0.1497,
+    "P90_Error": 0.8889,
+    "SampleCount": 10970
+  }
+}

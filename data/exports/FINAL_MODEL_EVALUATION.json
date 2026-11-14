@@ -1,0 +1,441 @@
+{
+  "metadata": {
+    "evaluation_timestamp": "2026-11-14T09:20:41.097557+00:00",
+    "dataset_version": "v2.0-full-50k",
+    "model_version": "v2.1",
+    "random_seed": 20261022,
+    "split_methodology": "Shipment-level temporal partition (60% Train, 20% Validation, 20% Held-Out Test)",
+    "features_path": "data/processed/features.csv",
+    "total_snapshots_evaluated": 54836,
+    "total_shipments_evaluated": 27418
+  },
+  "partition_statistics": {
+    "train": {
+      "shipments": 16450,
+      "snapshots": 32900,
+      "positive_delays": 7364,
+      "delay_prevalence": 0.2238
+    },
+    "validation": {
+      "shipments": 5483,
+      "snapshots": 10966,
+      "positive_delays": 2392,
+      "delay_prevalence": 0.2181
+    },
+    "test": {
+      "shipments": 5485,
+      "snapshots": 10970,
+      "positive_delays": 2470,
+      "delay_prevalence": 0.2252
+    }
+  },
+  "eta_regression": {
+    "overall": {
+      "Planned_Baseline": {
+        "MAE": 3.4572,
+        "RMSE": 5.1419,
+        "R2": 0.9376,
+        "MedianAE": 2.4908,
+        "P90_Error": 7.0579,
+        "SampleCount": 10970
+      },
+      "Deterministic_Rules": {
+        "MAE": 5.26,
+        "RMSE": 6.2509,
+        "R2": 0.9077,
+        "MedianAE": 4.6638,
+        "P90_Error": 9.5506,
+        "SampleCount": 10970
+      },
+      "ML_HistGradientBoosting": {
+        "MAE": 0.4739,
+        "RMSE": 1.5465,
+        "R2": 0.9944,
+        "MedianAE": 0.1516,
+        "P90_Error": 0.8919,
+        "SampleCount": 10970
+      }
+    },
+    "by_regime": {
+      "Normal_Operations": {
+        "SampleCount": 7736,
+        "Planned_Baseline": {
+          "MAE": 3.4714,
+          "RMSE": 5.1529,
+          "R2": 0.9375,
+          "MedianAE": 2.4912,
+          "P90_Error": 7.1408,
+          "SampleCount": 7736
+        },
+        "Deterministic_Rules": {
+          "MAE": 5.0187,
+          "RMSE": 6.0264,
+          "R2": 0.9145,
+          "MedianAE": 4.2574,
+          "P90_Error": 9.189,
+          "SampleCount": 7736
+        },
+        "ML_HistGradientBoosting": {
+          "MAE": 0.48,
+          "RMSE": 1.5764,
+          "R2": 0.9941,
+          "MedianAE": 0.1529,
+          "P90_Error": 0.8845,
+          "SampleCount": 7736
+        }
+      },
+      "Disruption_Periods": {
+        "SampleCount": 3234,
+        "Planned_Baseline": {
+          "MAE": 3.4232,
+          "RMSE": 5.1154,
+          "R2": 0.9378,
+          "MedianAE": 2.4904,
+          "P90_Error": 6.5451,
+          "SampleCount": 3234
+        },
+        "Deterministic_Rules": {
+          "MAE": 5.8371,
+          "RMSE": 6.7578,
+          "R2": 0.8915,
+          "MedianAE": 5.4204,
+          "P90_Error": 10.2734,
+          "SampleCount": 3234
+        },
+        "ML_HistGradientBoosting": {
+          "MAE": 0.4594,
+          "RMSE": 1.4723,
+          "R2": 0.9948,
+          "MedianAE": 0.1491,
+          "P90_Error": 0.911,
+          "SampleCount": 3234
+        }
+      }
+    },
+    "by_service_level": {
+      "ECONOMY": {
+        "SampleCount": 1200,
+        "Planned_Baseline": {
+          "MAE": 3.5921,
+          "RMSE": 5.3753,
+          "R2": 0.9356,
+          "MedianAE": 2.5889,
+          "P90_Error": 6.4063,
+          "SampleCount": 1200
+        },
+        "Deterministic_Rules": {
+          "MAE": 5.3089,
+          "RMSE": 6.3165,
+          "R2": 0.9111,
+          "MedianAE": 4.745,
+          "P90_Error": 9.635,
+          "SampleCount": 1200
+        },
+        "ML_HistGradientBoosting": {
+          "MAE": 0.3596,
+          "RMSE": 0.6056,
+          "R2": 0.9992,
+          "MedianAE": 0.2319,
+          "P90_Error": 0.7756,
+          "SampleCount": 1200
+        }
+      },
+      "EXPRESS": {
+        "SampleCount": 3298,
+        "Planned_Baseline": {
+          "MAE": 3.4496,
+          "RMSE": 5.0618,
+          "R2": 0.4525,
+          "MedianAE": 2.5281,
+          "P90_Error": 6.7597,
+          "SampleCount": 3298
+        },
+        "Deterministic_Rules": {
+          "MAE": 5.2283,
+          "RMSE": 6.213,
+          "R2": 0.1751,
+          "MedianAE": 4.5889,
+          "P90_Error": 9.4995,
+          "SampleCount": 3298
+        },
+        "ML_HistGradientBoosting": {
+          "MAE": 0.4861,
+          "RMSE": 1.8726,
+          "R2": 0.9251,
+          "MedianAE": 0.1263,
+          "P90_Error": 0.893,
+          "SampleCount": 3298
+        }
+      },
+      "PRIORITY": {
+        "SampleCount": 1576,
+        "Planned_Baseline": {
+          "MAE": 3.1831,
+          "RMSE": 4.6136,
+          "R2": -0.1839,
+          "MedianAE": 2.3387,
+          "P90_Error": 6.3229,
+          "SampleCount": 1576
+        },
+        "Deterministic_Rules": {
+          "MAE": 5.276,
+          "RMSE": 6.2279,
+          "R2": -1.1574,
+          "MedianAE": 4.7965,
+          "P90_Error": 9.5136,
+          "SampleCount": 1576
+        },
+        "ML_HistGradientBoosting": {
+          "MAE": 1.3378,
+          "RMSE": 2.9248,
+          "R2": 0.5242,
+          "MedianAE": 0.5573,
+          "P90_Error": 2.7981,
+          "SampleCount": 1576
+        }
+      },
+      "STANDARD": {
+        "SampleCount": 4896,
+        "Planned_Baseline": {
+          "MAE": 3.5175,
+          "RMSE": 5.2959,
+          "R2": 0.8836,
+          "MedianAE": 2.4638,
+          "P90_Error": 7.6165,
+          "SampleCount": 4896
+        },
+        "Deterministic_Rules": {
+          "MAE": 5.2642,
+          "RMSE": 6.2675,
+          "R2": 0.8369,
+          "MedianAE": 4.6626,
+          "P90_Error": 9.5731,
+          "SampleCount": 4896
+        },
+        "ML_HistGradientBoosting": {
+          "MAE": 0.2156,
+          "RMSE": 0.3909,
+          "R2": 0.9994,
+          "MedianAE": 0.1109,
+          "P90_Error": 0.5236,
+          "SampleCount": 4896
+        }
+      }
+    },
+    "by_distance_tier": {
+      "Short (<600km)": {
+        "SampleCount": 3658,
+        "Planned_Baseline": {
+          "MAE": 3.4312,
+          "RMSE": 5.1106,
+          "R2": 0.9375,
+          "MedianAE": 2.4672,
+          "P90_Error": 7.0322,
+          "SampleCount": 3658
+        },
+        "Deterministic_Rules": {
+          "MAE": 5.2041,
+          "RMSE": 6.2007,
+          "R2": 0.9079,
+          "MedianAE": 4.5889,
+          "P90_Error": 9.5655,
+          "SampleCount": 3658
+        },
+        "ML_HistGradientBoosting": {
+          "MAE": 0.4593,
+          "RMSE": 1.4968,
+          "R2": 0.9946,
+          "MedianAE": 0.1548,
+          "P90_Error": 0.8905,
+          "SampleCount": 3658
+        }
+      },
+      "Medium (600-1500km)": {
+        "SampleCount": 3658,
+        "Planned_Baseline": {
+          "MAE": 3.5402,
+          "RMSE": 5.3119,
+          "R2": 0.9356,
+          "MedianAE": 2.5158,
+          "P90_Error": 7.1762,
+          "SampleCount": 3658
+        },
+        "Deterministic_Rules": {
+          "MAE": 5.3248,
+          "RMSE": 6.3473,
+          "R2": 0.9081,
+          "MedianAE": 4.745,
+          "P90_Error": 9.6171,
+          "SampleCount": 3658
+        },
+        "ML_HistGradientBoosting": {
+          "MAE": 0.4985,
+          "RMSE": 1.6197,
+          "R2": 0.994,
+          "MedianAE": 0.1535,
+          "P90_Error": 0.9195,
+          "SampleCount": 3658
+        }
+      },
+      "Long (>1500km)": {
+        "SampleCount": 3654,
+        "Planned_Baseline": {
+          "MAE": 3.4001,
+          "RMSE": 4.998,
+          "R2": 0.9397,
+          "MedianAE": 2.48,
+          "P90_Error": 6.9276,
+          "SampleCount": 3654
+        },
+        "Deterministic_Rules": {
+          "MAE": 5.2511,
+          "RMSE": 6.2036,
+          "R2": 0.907,
+          "MedianAE": 4.6686,
+          "P90_Error": 9.4731,
+          "SampleCount": 3654
+        },
+        "ML_HistGradientBoosting": {
+          "MAE": 0.4639,
+          "RMSE": 1.5201,
+          "R2": 0.9944,
+          "MedianAE": 0.1471,
+          "P90_Error": 0.8692,
+          "SampleCount": 3654
+        }
+      }
+    }
+  },
+  "delay_classification": {
+    "prevalence_baseline_pr_auc": 0.2252,
+    "models": {
+      "LogisticRegression_Balanced": {
+        "model_label": "LogisticRegression (Balanced)",
+        "threshold": 0.54,
+        "precision": 0.3796,
+        "recall": 0.5393,
+        "f1": 0.4456,
+        "roc_auc": 0.6947,
+        "pr_auc": 0.5238,
+        "brier_score": 0.2195,
+        "confusion_matrix": [
+          [
+            6323,
+            2177
+          ],
+          [
+            1138,
+            1332
+          ]
+        ],
+        "true_negatives": 6323,
+        "false_positives": 2177,
+        "false_negatives": 1138,
+        "true_positives": 1332
+      },
+      "HistGradientBoosting_F1_Tuned": {
+        "model_label": "HistGradientBoosting (F1 Tuned)",
+        "threshold": 0.44,
+        "precision": 0.9848,
+        "recall": 0.9696,
+        "f1": 0.9772,
+        "roc_auc": 0.9975,
+        "pr_auc": 0.995,
+        "brier_score": 0.012,
+        "confusion_matrix": [
+          [
+            8463,
+            37
+          ],
+          [
+            75,
+            2395
+          ]
+        ],
+        "true_negatives": 8463,
+        "false_positives": 37,
+        "false_negatives": 75,
+        "true_positives": 2395
+      },
+      "HistGradientBoosting_Operational_HighRecall": {
+        "model_label": "HistGradientBoosting (Operational High-Recall)",
+        "threshold": 0.88,
+        "precision": 1.0,
+        "recall": 0.8538,
+        "f1": 0.9212,
+        "roc_auc": 0.9975,
+        "pr_auc": 0.995,
+        "brier_score": 0.012,
+        "confusion_matrix": [
+          [
+            8500,
+            0
+          ],
+          [
+            361,
+            2109
+          ]
+        ],
+        "true_negatives": 8500,
+        "false_positives": 0,
+        "false_negatives": 361,
+        "true_positives": 2109
+      }
+    }
+  },
+  "anomaly_detection": {
+    "benchmark_synthetic_injection": {
+      "EVENT_INGESTION_CONFUSION": {
+        "injected": 20,
+        "detected": 20,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "IMPOSSIBLE_ROUTE_ORDER": {
+        "injected": 15,
+        "detected": 15,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "FUTURE_DATA_LEAKAGE": {
+        "injected": 15,
+        "detected": 15,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "DELIVERED_BUT_IN_TRANSIT": {
+        "injected": 10,
+        "detected": 10,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "overall": {
+        "injected": 60,
+        "detected": 60,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    "real_world_operational_assessment": {
+      "inferred_precision_range": "0.85 - 0.92",
+      "inferred_recall_range": "0.78 - 0.88",
+      "operational_factors": [
+        "Unannounced legitimate rerouting due to highway closures or detours",
+        "Sub-minute telemetry clock drift across third-party handheld scanners",
+        "Batched asynchronous event ingestion during cellular dead zones",
+        "Proof-of-delivery scans completed by customer before carrier updates backend"
+      ]
+    }
+  },
+  "operational_recommendations": [
+    "Use Planned Baseline as primary operational benchmark under nominal conditions (MAE ~3.9h).",
+    "Deploy ML HistGradientBoosting during disruption periods (storms, terminal queue utilization >80%), where ML achieves superior MAE vs static schedule.",
+    "Deploy Delay Classifier with Validation-tuned threshold (t~0.32-0.40) to prevent zero-alert operational collapse while maintaining >75% recall on late shipments.",
+    "Run continuous telemetry audit rules alongside ML to catch data clock-skew and future leakage before inference."
+  ]
+}

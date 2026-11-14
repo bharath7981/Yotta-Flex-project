@@ -1,0 +1,1 @@
+eta_id,shipment_id,snapshot_time,violation_type,source,violating_value,delta_hours,is_controlled_anomaly

@@ -1,0 +1,9 @@
+reason_id,reason_code,reason_category,description
+DLY-2026-000001,WEATHER_DISRUPTION,ENVIRONMENTAL,"Severe convective storms, snowstorms, flooding, or gale winds impeding transit."
+DLY-2026-000002,FACILITY_CONGESTION,OPERATIONAL,Inbound sorting facility or cross-dock queue exceeding 90% utilization.
+DLY-2026-000003,CARRIER_DELAY,CARRIER,"Mechanical breakdown, driver hours-of-service limits, or fleet scheduling shortfall."
+DLY-2026-000004,ROUTE_CHANGE,NETWORK,"En-route detour caused by road closures, rail bridge maintenance, or airspace blocks."
+DLY-2026-000005,CUSTOMS_DELAY,CUSTOMS,Regulatory inspection or import documentation hold at border clearing checkpoint.
+DLY-2026-000006,MISSED_CONNECTION,OPERATIONAL,Inbound feeder leg arrived past hub departure cutoff window.
+DLY-2026-000007,OPERATIONAL_HOLD,OPERATIONAL,"Security audit, weight reconciliation, or hazmat containment inspection."
+DLY-2026-000008,UNKNOWN,OTHER,Unclassified transit delay pending telemetry reconciliation.

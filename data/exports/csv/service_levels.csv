@@ -1,0 +1,5 @@
+service_level_id,service_level_name,promised_transit_hours,grace_period_hours,priority_tier,description
+PRIORITY,Priority Express Delivery,24.0,0.5,1,Next-day urgent freight with 30-minute SLA grace window.
+EXPRESS,Expedited 2-Day Freight,48.0,1.0,2,Two-day expedited transport with 1-hour SLA grace window.
+STANDARD,Standard Regional Ground,120.0,2.0,3,Standard 5-day scheduled transit with 2-hour SLA grace window.
+ECONOMY,Economy Deferred Freight,168.0,4.0,4,Deferred 7-day economical transport with 4-hour SLA grace window.

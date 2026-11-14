@@ -1,0 +1,30 @@
+{
+  "best_model": "ML_HistGBT_Engineered",
+  "honest_comparison": {
+    "Planned_Baseline": {
+      "MAE": 4.7944,
+      "RMSE": 7.0273,
+      "R2": 0.9316,
+      "MAPE": 24.53
+    },
+    "Rule_Based": {
+      "MAE": 6.7852,
+      "RMSE": 8.1397,
+      "R2": 0.9082,
+      "MAPE": 45.62
+    },
+    "ML_HistGBT_Base": {
+      "MAE": 6.1058,
+      "RMSE": 8.2365,
+      "R2": 0.906,
+      "MAPE": 30.1
+    },
+    "ML_HistGBT_Engineered": {
+      "MAE": 6.3144,
+      "RMSE": 8.5959,
+      "R2": 0.8977,
+      "MAPE": 31.97
+    }
+  },
+  "note": "Planned baseline may outperform ML on synthetic data. See eta_metrics.json for all comparisons."
+}

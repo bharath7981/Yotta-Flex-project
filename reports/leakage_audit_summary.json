@@ -1,0 +1,21 @@
+{
+  "status": "PASSED",
+  "total_snapshots_audited": 95088,
+  "total_flags_detected": 0,
+  "controlled_benchmark_anomalies": 0,
+  "genuine_operational_violations": 0,
+  "target_separation": {
+    "status": "PASSED",
+    "leaked_target_columns": [],
+    "feature_columns_checked": 26
+  },
+  "audited_sources": [
+    "tracking_events (occurrence <= snapshot AND ingestion <= snapshot)",
+    "facility_queues (observed_at <= snapshot AND ingested_at <= snapshot + value match)",
+    "weather_forecasts (issued_at <= snapshot + value match)",
+    "route_changes (recorded_at <= snapshot + count match)",
+    "disruptions (reported_at <= snapshot AND started_at <= snapshot)",
+    "carrier_performance (actual_delivery_at < snapshot, self-exclusion & future exclusion)",
+    "target_separation (all target and post-outcome columns excluded from features)"
+  ]
+}

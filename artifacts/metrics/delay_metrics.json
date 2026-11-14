@@ -1,0 +1,54 @@
+{
+  "target": "is_delayed_target",
+  "target_definition": "is_delayed_target: actual_delivery_at > planned_delivery_at",
+  "secondary_contract_label": "is_sla_breached_target: actual_delivery_at > promised_delivery_at + grace_hours",
+  "LogisticRegression_Balanced": {
+    "model_label": "LogisticRegression (Balanced)",
+    "threshold": 0.54,
+    "precision": 0.3752,
+    "recall": 0.5287,
+    "f1": 0.4389,
+    "roc_auc": 0.6939,
+    "pr_auc": 0.5207,
+    "brier_score": 0.219,
+    "confusion_matrix": [
+      [
+        6325,
+        2175
+      ],
+      [
+        1164,
+        1306
+      ]
+    ],
+    "true_negatives": 6325,
+    "false_positives": 2175,
+    "false_negatives": 1164,
+    "true_positives": 1306
+  },
+  "ML_HistGBT_ThresholdTuned": {
+    "precision": 0.9873,
+    "recall": 0.9725,
+    "f1": 0.9798,
+    "roc_auc": 0.9979,
+    "pr_auc": 0.9956,
+    "brier_score": 0.0112,
+    "decision_threshold": 0.46,
+    "confusion_matrix": [
+      [
+        8469,
+        31
+      ],
+      [
+        68,
+        2402
+      ]
+    ]
+  },
+  "risk_thresholds": {
+    "LOW": "< 0.25 \u2014 No action required; monitor normally",
+    "MEDIUM": "0.25\u20130.50 \u2014 Flag for proactive carrier check",
+    "HIGH": "0.50\u20130.75 \u2014 Escalate to operations manager",
+    "CRITICAL": ">= 0.75 \u2014 Immediate intervention; customer notification"
+  }
+}

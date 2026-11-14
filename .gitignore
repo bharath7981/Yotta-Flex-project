@@ -1,0 +1,32 @@
+# Python bytecode & environments
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+
+# Testing & quality
+.pytest_cache/
+.coverage
+htmlcov/
+.deepeval/
+
+# Operating System & IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Large compressed archive (>100MB rejected by GitHub)
+*.zip
+*.tar.gz
+
+# Local DuckDB Lakehouse (regenerated on demand via run_pipeline.py or python -m src.data.initialize)
+*.duckdb
+*.duckdb.wal
+
+# Large export JSONs (>100MB rejected by GitHub, regenerated via python -m src.data.exporter)
+data/exports/json/
