@@ -103,3 +103,21 @@ def render_page(data):
         - **Controlled Anomaly Isolation**: Quarantines known anomalies into `ground_truth.csv`.
         """)
 
+
+if __name__ == "__main__":
+    import sys
+    from pathlib import Path
+    _root = Path(__file__).resolve().parents[2]
+    if str(_root) not in sys.path:
+        sys.path.insert(0, str(_root))
+    from frontend.utils.data_loader import load_dashboard_data
+    from frontend.utils.styles import CUSTOM_CSS
+    try:
+        st.set_page_config(page_title="Data Quality — Logistics", page_icon="🚚", layout="wide")
+    except Exception:
+        pass
+    st.markdown(CUSTOM_CSS, unsafe_allow_html=True)
+    _data = load_dashboard_data()
+    render_page(_data)
+
+

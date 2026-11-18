@@ -178,11 +178,22 @@ def render_page(data):
             st.dataframe(leak_df, use_container_width=True, hide_index=True)
         else:
             st.warning("Cutoff Integrity Audit: Injected future-data leakage cases isolated (15 test anomalies correctly flagged)")
-        leakage_csv = PROJECT_ROOT / "data" / "analytics" / "leakage_audit_report.csv"
-        if leakage_csv.exists():
-            st.markdown("#### Leakage Audit Report Summary")
-            leak_df = pd.read_csv(leakage_csv)
-            st.dataframe(leak_df, use_container_width=True, hide_index=True)
-        else:
-            st.warning("Cutoff Integrity Audit: Injected future-data leakage cases isolated (15 test anomalies correctly flagged)")
+
+
+if __name__ == "__main__":
+    import sys
+    from pathlib import Path
+    _root = Path(__file__).resolve().parents[2]
+    if str(_root) not in sys.path:
+        sys.path.insert(0, str(_root))
+    from frontend.utils.data_loader import load_dashboard_data
+    from frontend.utils.styles import CUSTOM_CSS
+    try:
+        st.set_page_config(page_title="Model Performance — Logistics", page_icon="🚚", layout="wide")
+    except Exception:
+        pass
+    st.markdown(CUSTOM_CSS, unsafe_allow_html=True)
+    _data = load_dashboard_data()
+    render_page(_data)
+
 

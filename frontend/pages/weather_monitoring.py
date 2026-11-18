@@ -79,3 +79,21 @@ def render_page(data):
     display_cols = [c for c in ["weather_id", "weather_type", "severity", "facility_id", "route_id", "started_at", "ended_at", "impact_delay_hours", "visibility_km", "wind_speed_kmh"] if c in df.columns]
     sorted_df = df.sort_values("started_at_dt", ascending=False)
     st.dataframe(sorted_df[display_cols], use_container_width=True)
+
+
+if __name__ == "__main__":
+    import sys
+    from pathlib import Path
+    _root = Path(__file__).resolve().parents[2]
+    if str(_root) not in sys.path:
+        sys.path.insert(0, str(_root))
+    from frontend.utils.data_loader import load_dashboard_data
+    from frontend.utils.styles import CUSTOM_CSS
+    try:
+        st.set_page_config(page_title="Weather Monitoring — Logistics", page_icon="🚚", layout="wide")
+    except Exception:
+        pass
+    st.markdown(CUSTOM_CSS, unsafe_allow_html=True)
+    _data = load_dashboard_data()
+    render_page(_data)
+

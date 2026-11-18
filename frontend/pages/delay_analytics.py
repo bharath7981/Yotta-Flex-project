@@ -73,3 +73,21 @@ def render_page(data):
             fig_mode = px.pie(mode_counts, names="Transport Mode", values="Segment Volume", hole=0.35)
             st.plotly_chart(fig_mode, use_container_width=True)
 
+
+if __name__ == "__main__":
+    import sys
+    from pathlib import Path
+    _root = Path(__file__).resolve().parents[2]
+    if str(_root) not in sys.path:
+        sys.path.insert(0, str(_root))
+    from frontend.utils.data_loader import load_dashboard_data
+    from frontend.utils.styles import CUSTOM_CSS
+    try:
+        st.set_page_config(page_title="Delay Analytics — Logistics", page_icon="🚚", layout="wide")
+    except Exception:
+        pass
+    st.markdown(CUSTOM_CSS, unsafe_allow_html=True)
+    _data = load_dashboard_data()
+    render_page(_data)
+
+
